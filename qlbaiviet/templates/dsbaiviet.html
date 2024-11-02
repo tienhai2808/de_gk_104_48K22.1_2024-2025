@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  {% for message in messages %}
+    {{ message }}
+  {% endfor %}
+  <br> <br>
+  {% for baiviet in baiviets %}
+    Tiêu đề: {{ baiviet.tieu_de }} <br>
+    Chuyên mục: <br>
+    {% for chuyenmuc in baiviet.baivietchuyenmuc_set.all %}
+      {{ chuyenmuc.chuyen_muc }}
+      <br>
+    {% endfor %}
+    <a href="/{{ baiviet.id }}/">Sửa thông tin</a>
+    <br><br>
+  {% endfor %}
+</body>
+</html>
