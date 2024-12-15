@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class ChuyenMuc(models.Model):
   ten = models.CharField(max_length=200)
   thu_tu = models.IntegerField()
-  
+
   def __str__(self):
     return f'{self.thu_tu} - {self.ten}'
   
